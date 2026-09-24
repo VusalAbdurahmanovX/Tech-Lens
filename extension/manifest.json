@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Tech Lens",
+  "version": "0.1.2",
+  "description": "Discover website technologies with clear detection evidence.",
+  "minimum_chrome_version": "116",
+  "icons": { "16": "icon.png", "48": "icon.png", "128": "icon.png" },
+  "permissions": ["activeTab", "tabs", "scripting", "sidePanel"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "action": { "default_title": "Tech Lens - Technologiesi incele" },
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "panel.html" }
+}

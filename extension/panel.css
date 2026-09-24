@@ -1,0 +1,46 @@
+:root { color-scheme: light; --paper: #fff; --ink: #20332f; --muted: #76817d; --line: #e9eeeb; --accent: #167c64; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 13px 'Trebuchet MS', sans-serif; min-width: 260px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+header { display: flex; align-items: center; gap: 9px; padding: 16px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(110deg, #f3f8f4, #fff 80%); }
+header strong { font-size: 22px; letter-spacing: -1px; }
+.brand-mark { border-radius: 7px; }
+.dot { color: var(--accent); }
+.edition { margin-left: auto; font-size: 8px; letter-spacing: 1px; color: var(--muted); }
+main { padding: 16px 18px 22px; }
+.target { display: flex; align-items: center; gap: 8px; margin-bottom: 23px; }
+#site { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; font-size: 13px; font-weight: bold; }
+.status-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+button { border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; color: var(--ink); background: #fff; }
+#scan { background: #f0f6f3; border-color: #dce9e1; color: #17654e; white-space: nowrap; font-size: 11px; }
+.section-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 13px; }
+h1 { font-size: 15px; font-weight: bold; margin: 0; }
+#count { font: 10px monospace; background: #eaf3ed; color: #35745a; padding: 3px 6px; border-radius: 4px; }
+.toolbar { margin-bottom: 9px; }
+input { width: 100%; min-width: 0; border: 1px solid var(--line); background: #f8faf9; padding: 10px 11px; color: var(--ink); border-radius: 6px; font-size: 12px; }
+input::placeholder { color: #8b9590; }
+#status { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0 0 18px; overflow-wrap: anywhere; }
+h2 { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: bold; color: var(--accent); margin: 20px 0 6px; }
+h2::after { content: ''; height: 1px; flex: 1; background: var(--line); }
+h2:first-child { margin-top: 0; }
+.tech { border-bottom: 1px solid #f2f4f2; }
+summary { display: flex; align-items: center; gap: 11px; min-height: 47px; padding: 9px 5px; cursor: pointer; list-style: none; border-radius: 5px; }
+summary:hover { background: #f6f9f7; }
+summary::-webkit-details-marker { display: none; }
+.tech-icon { flex-shrink: 0; object-fit: contain; width: 22px; height: 22px; }
+.name { font-size: 13px; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.version { display: inline-block; font: 10px monospace; color: #84908a; margin-left: 8px; }
+.badge { font-size: 12px; color: #408367; }
+.badge.possible { font-size: 9px; color: #946921; background: #fcf3df; padding: 3px 5px; border-radius: 4px; }
+summary::after { content: ''; width: 5px; height: 5px; border-right: 1px solid #96a49b; border-bottom: 1px solid #96a49b; transform: rotate(-45deg); margin: 0 3px 0 2px; }
+details[open] summary::after { transform: rotate(45deg); }
+.evidence { margin: 0 0 8px 33px; padding: 8px 10px 8px 23px; background: #f5f8f6; border-radius: 5px; font-size: 11px; line-height: 1.7; color: #66766e; overflow-wrap: anywhere; }
+footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 18px; border-top: 1px solid var(--line); font-size: 10px; color: var(--muted); }
+footer button { font-size: 10px; white-space: nowrap; }
+.privacy::before { content: ''; display: inline-block; width: 5px; height: 5px; margin-right: 5px; border-radius: 50%; background: #6c9d81; }
+#empty { font-size: 12px; color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 320px) { header, main, footer { padding-left: 12px; padding-right: 12px; } .edition { font-size: 7px; letter-spacing: .5px; } }

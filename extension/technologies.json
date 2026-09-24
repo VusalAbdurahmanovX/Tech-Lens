@@ -1,0 +1,686 @@
+[
+  {
+    "name": "WordPress",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "/wp-(content|includes)/",
+        "label": "WordPress asset path"
+      },
+      {
+        "type": "meta",
+        "regex": "WordPress\\s*([\\d.]+)?",
+        "label": "Generator meta tag",
+        "key": "generator",
+        "version": 1
+      }
+    ],
+    "icon": "wordpress.svg"
+  },
+  {
+    "name": "WooCommerce",
+    "category": "Ecommerce",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "/wp-content/plugins/woocommerce/",
+        "label": "WooCommerce plugin asset"
+      },
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: body.woocommerce",
+        "key": "body.woocommerce"
+      }
+    ],
+    "icon": "woocommerce.svg"
+  },
+  {
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://cdn\\.shopify\\.com/",
+        "label": "Shopify CDN resource"
+      },
+      {
+        "type": "global",
+        "regex": ".",
+        "label": "JavaScript: Shopify.theme",
+        "key": "Shopify.theme"
+      }
+    ],
+    "icon": "shopify.svg"
+  },
+  {
+    "name": "Wix",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "meta",
+        "regex": "Wix(?:\\.com)?(?:\\s+([\\d.]+))?",
+        "label": "Generator meta tag",
+        "key": "generator",
+        "version": 1
+      },
+      {
+        "type": "global",
+        "regex": ".",
+        "label": "JavaScript: wixBiSession",
+        "key": "wixBiSession"
+      }
+    ],
+    "icon": "wix.svg"
+  },
+  {
+    "name": "Webflow",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: html[data-wf-site]",
+        "key": "html[data-wf-site]"
+      },
+      {
+        "type": "meta",
+        "regex": "Webflow(?:\\s+([\\d.]+))?",
+        "label": "Generator meta tag",
+        "key": "generator",
+        "version": 1
+      }
+    ],
+    "icon": "webflow.svg"
+  },
+  {
+    "name": "Ghost",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "meta",
+        "regex": "Ghost\\s*([\\d.]+)?",
+        "label": "Generator meta tag",
+        "key": "generator",
+        "version": 1
+      }
+    ],
+    "icon": "ghost.svg"
+  },
+  {
+    "name": "Drupal",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "meta",
+        "regex": "Drupal\\s*([\\d.]+)?",
+        "label": "Generator meta tag",
+        "key": "generator",
+        "version": 1
+      },
+      {
+        "type": "global",
+        "regex": ".",
+        "label": "JavaScript: drupalSettings",
+        "key": "drupalSettings"
+      }
+    ],
+    "icon": "drupal.svg"
+  },
+  {
+    "name": "Joomla",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "meta",
+        "regex": "Joomla!?\\s*([\\d.]+)?",
+        "label": "Generator meta tag",
+        "key": "generator",
+        "version": 1
+      }
+    ],
+    "icon": "joomla.svg"
+  },
+  {
+    "name": "Squarespace",
+    "category": "CMS",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": ".",
+        "label": "JavaScript: Static.SQUARESPACE_CONTEXT",
+        "key": "Static.SQUARESPACE_CONTEXT"
+      },
+      {
+        "type": "asset",
+        "regex": "^https?://static\\d*\\.squarespace\\.com/",
+        "label": "Squarespace resource"
+      }
+    ],
+    "icon": "squarespace.svg"
+  },
+  {
+    "name": "Next.js",
+    "category": "Framework",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "/_next/static/",
+        "label": "Next.js static asset"
+      },
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: script#__NEXT_DATA__",
+        "key": "script#__NEXT_DATA__"
+      },
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: next.version",
+        "key": "next.version",
+        "version": 1
+      }
+    ],
+    "icon": "nextdotjs.svg"
+  },
+  {
+    "name": "Nuxt",
+    "category": "Framework",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "/_nuxt/",
+        "label": "Nuxt static asset"
+      },
+      {
+        "type": "global",
+        "regex": ".",
+        "label": "JavaScript: __NUXT__",
+        "key": "__NUXT__"
+      }
+    ],
+    "icon": "nuxt.svg"
+  },
+  {
+    "name": "React",
+    "category": "JavaScript",
+    "patterns": [
+      {
+        "type": "runtime",
+        "regex": ".",
+        "label": "React runtime property on a DOM element",
+        "key": "React"
+      },
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: React.version",
+        "key": "React.version",
+        "version": 1
+      }
+    ],
+    "icon": "react.svg"
+  },
+  {
+    "name": "Vue.js",
+    "category": "JavaScript",
+    "patterns": [
+      {
+        "type": "runtime",
+        "regex": ".",
+        "label": "Vue runtime property on a DOM element",
+        "key": "Vue"
+      },
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: Vue.version",
+        "key": "Vue.version",
+        "version": 1
+      }
+    ],
+    "icon": "vuedotjs.svg"
+  },
+  {
+    "name": "Angular",
+    "category": "Framework",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": "^(\\d[\\w.-]*)",
+        "label": "Angular ng-version attribute",
+        "key": "[ng-version]",
+        "version": 1
+      }
+    ],
+    "icon": "angular.svg"
+  },
+  {
+    "name": "Svelte",
+    "category": "Framework",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: [class*=\"svelte-\"]",
+        "key": "[class*=\"svelte-\"]",
+        "possible": true
+      }
+    ],
+    "icon": "svelte.svg"
+  },
+  {
+    "name": "Astro",
+    "category": "Framework",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: astro-island",
+        "key": "astro-island"
+      },
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: [data-astro-cid]",
+        "key": "[data-astro-cid]",
+        "possible": true
+      },
+      {
+        "type": "asset",
+        "regex": "/_astro/",
+        "label": "Astro static asset"
+      }
+    ],
+    "icon": "astro.svg"
+  },
+  {
+    "name": "jQuery",
+    "category": "JavaScript",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: jQuery.fn.jquery",
+        "key": "jQuery.fn.jquery",
+        "version": 1
+      }
+    ],
+    "icon": "jquery.svg"
+  },
+  {
+    "name": "Alpine.js",
+    "category": "JavaScript",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: Alpine.version",
+        "key": "Alpine.version",
+        "version": 1
+      }
+    ],
+    "icon": "alpinedotjs.svg"
+  },
+  {
+    "name": "HTMX",
+    "category": "JavaScript",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: htmx.version",
+        "key": "htmx.version",
+        "version": 1
+      }
+    ],
+    "icon": "htmx.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "category": "UI / CSS",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: bootstrap.Tooltip.VERSION",
+        "key": "bootstrap.Tooltip.VERSION",
+        "version": 1
+      },
+      {
+        "type": "asset",
+        "regex": "/bootstrap(?:@[^/]+)?/(?:dist/)?css/bootstrap",
+        "label": "Bootstrap stylesheet"
+      }
+    ],
+    "icon": "bootstrap.svg"
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "UI / CSS",
+    "patterns": [
+      {
+        "type": "css",
+        "regex": "--tw-(?:translate|ring|shadow|gradient|border)",
+        "label": "Tailwind variables in a stylesheet",
+        "key": "tailwind",
+        "possible": true
+      },
+      {
+        "type": "asset",
+        "regex": "^https?://(?:cdn\\.tailwindcss\\.com|cdn\\.jsdelivr\\.net/npm/@tailwindcss/browser@[^/]+)/",
+        "label": "Tailwind browser package"
+      }
+    ],
+    "icon": "tailwindcss.svg"
+  },
+  {
+    "name": "Material UI",
+    "category": "UI / CSS",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: [class*=\"MuiButton-root\"], [class*=\"MuiTypography-root\"]",
+        "key": "[class*=\"MuiButton-root\"], [class*=\"MuiTypography-root\"]"
+      }
+    ],
+    "icon": "mui.svg"
+  },
+  {
+    "name": "Ant Design",
+    "category": "UI / CSS",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: .ant-btn, .ant-select, .ant-layout",
+        "key": ".ant-btn, .ant-select, .ant-layout",
+        "possible": true
+      }
+    ],
+    "icon": "antdesign.svg"
+  },
+  {
+    "name": "Radix UI",
+    "category": "UI / CSS",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: [data-radix-popper-content-wrapper], [data-radix-scroll-area-viewport]",
+        "key": "[data-radix-popper-content-wrapper], [data-radix-scroll-area-viewport]"
+      }
+    ],
+    "icon": "radixui.svg"
+  },
+  {
+    "name": "Lucide",
+    "category": "Icons",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: svg.lucide",
+        "key": "svg.lucide"
+      }
+    ],
+    "icon": "lucide.svg"
+  },
+  {
+    "name": "Font Awesome",
+    "category": "Icons",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: svg[data-prefix][data-icon].svg-inline--fa",
+        "key": "svg[data-prefix][data-icon].svg-inline--fa"
+      },
+      {
+        "type": "asset",
+        "regex": "^https?://(?:kit|use)\\.fontawesome\\.com/",
+        "label": "Font Awesome resource"
+      }
+    ],
+    "icon": "fontawesome.svg"
+  },
+  {
+    "name": "Material Icons",
+    "category": "Icons",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://fonts\\.googleapis\\.com/(?:icon|css).*Material",
+        "label": "Material Icons font resource"
+      },
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: .material-icons, .material-symbols-outlined",
+        "key": ".material-icons, .material-symbols-outlined",
+        "possible": true
+      }
+    ],
+    "icon": "materialdesignicons.svg"
+  },
+  {
+    "name": "Google Fonts",
+    "category": "Fonts",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://fonts\\.(?:googleapis|gstatic)\\.com/",
+        "label": "Google Fonts stylesheet or font resource"
+      }
+    ],
+    "icon": "googlefonts.svg"
+  },
+  {
+    "name": "Adobe Fonts",
+    "category": "Fonts",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://use\\.typekit\\.net/",
+        "label": "Adobe Fonts resource"
+      }
+    ],
+    "icon": "adobefonts.svg"
+  },
+  {
+    "name": "Google Analytics",
+    "category": "Analytics",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://(?:www\\.)?google-analytics\\.com/(?:analytics|ga)\\.js",
+        "label": "Google Analytics script"
+      }
+    ],
+    "icon": "googleanalytics.svg"
+  },
+  {
+    "name": "Google tag",
+    "category": "Analytics",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://www\\.googletagmanager\\.com/gtag/js",
+        "label": "Google tag script (may be Analytics or Ads)"
+      }
+    ],
+    "icon": "google.svg"
+  },
+  {
+    "name": "Google Tag Manager",
+    "category": "Analytics",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://www\\.googletagmanager\\.com/gtm\\.js",
+        "label": "GTM container script"
+      }
+    ],
+    "icon": "googletagmanager.svg"
+  },
+  {
+    "name": "Microsoft Clarity",
+    "category": "Analytics",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://(?:www\\.)?clarity\\.ms/tag/",
+        "label": "Clarity script"
+      }
+    ],
+    "icon": "microsoftclarity.ico"
+  },
+  {
+    "name": "Hotjar",
+    "category": "Analytics",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://static\\.hotjar\\.com/",
+        "label": "Hotjar script"
+      }
+    ],
+    "icon": "hotjar.svg"
+  },
+  {
+    "name": "Plausible",
+    "category": "Analytics",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://plausible\\.io/js/",
+        "label": "Plausible script"
+      }
+    ],
+    "icon": "plausibleanalytics.svg"
+  },
+  {
+    "name": "Meta Pixel",
+    "category": "Advertising",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://connect\\.facebook\\.net/[^/]+/fbevents\\.js",
+        "label": "Meta Pixel script"
+      }
+    ],
+    "icon": "meta.svg"
+  },
+  {
+    "name": "Stripe",
+    "category": "Payments",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://js\\.stripe\\.com/",
+        "label": "Stripe.js resource"
+      }
+    ],
+    "icon": "stripe.svg"
+  },
+  {
+    "name": "PayPal",
+    "category": "Payments",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://www\\.paypal\\.com/sdk/js",
+        "label": "PayPal SDK resource"
+      }
+    ],
+    "icon": "paypal.svg"
+  },
+  {
+    "name": "Cloudflare Turnstile",
+    "category": "Security",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://challenges\\.cloudflare\\.com/turnstile/",
+        "label": "Turnstile script"
+      }
+    ],
+    "icon": "cloudflare.svg"
+  },
+  {
+    "name": "reCAPTCHA",
+    "category": "Security",
+    "patterns": [
+      {
+        "type": "asset",
+        "regex": "^https?://(?:www\\.google\\.com|www\\.recaptcha\\.net)/recaptcha/",
+        "label": "reCAPTCHA script"
+      }
+    ],
+    "icon": "recaptcha.png"
+  },
+  {
+    "name": "GSAP",
+    "category": "Animation",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: gsap.version",
+        "key": "gsap.version",
+        "version": 1
+      }
+    ],
+    "icon": "gsap.svg"
+  },
+  {
+    "name": "Lottie",
+    "category": "Animation",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: lottie.version",
+        "key": "lottie.version",
+        "version": 1
+      },
+      {
+        "type": "global",
+        "regex": "^(\\d[^ ]*)",
+        "label": "JavaScript: bodymovin.version",
+        "key": "bodymovin.version",
+        "version": 1
+      }
+    ],
+    "icon": "lottiefiles.svg"
+  },
+  {
+    "name": "Swiper",
+    "category": "UI / CSS",
+    "patterns": [
+      {
+        "type": "dom",
+        "regex": ".",
+        "label": "DOM: .swiper.swiper-initialized",
+        "key": ".swiper.swiper-initialized"
+      }
+    ],
+    "icon": "swiper.svg"
+  },
+  {
+    "name": "AOS",
+    "category": "Animation",
+    "patterns": [
+      {
+        "type": "global",
+        "regex": ".",
+        "label": "JavaScript: AOS.init",
+        "key": "AOS.init"
+      }
+    ],
+    "icon": "aos.svg"
+  }
+]
